@@ -1,0 +1,60 @@
+/* Set the box-sizing and font for the project */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Remove the unneeded margin on the body and make it the app container */
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: hsl(34, 78%, 91%);
+}
+
+/* Create a basic Button style */
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  line-height: 50px;
+  padding: 0 80px;
+  border: solid 2px hsl(0, 0%, 6%);
+  color: hsl(0, 0%, 6%);
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: lighter;
+  background-color: hsl(34, 78%, 91%);
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: hsla(0, 0%, 6%, 0.05);
+}
+
+[data-ripple] {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-ripple] .ripple-pad {
+  background: hsla(240, 100%, 50%, 0.5);
+  position: absolute;
+  opacity: 1;
+  transform: scale(0);
+  animation: RippleEffect 1700ms cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+@keyframes RippleEffect {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
